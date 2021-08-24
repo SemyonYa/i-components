@@ -10,7 +10,7 @@ import { FakeApiService } from './services/fake-api.service';
 export class AppComponent implements OnInit {
   title = 'i-components';
   users: User[];
-  columns: { field: string }[];
+  columns: any[];
 
   constructor(private fakeApiService: FakeApiService) {
     fakeApiService.users$
@@ -18,11 +18,11 @@ export class AppComponent implements OnInit {
         users => {
           this.users = users;
           this.columns = [
-            { field: 'ID' },
-            { field: 'login' },
-            { field: 'name' },
-            { field: 'role' },
-            { field: 'age' }
+            { field: 'ID', sortable: true },
+            { field: 'login', sortable: true },
+            { field: 'name', sortable: true },
+            { field: 'role', sortable: true },
+            { field: 'age', sortable: true },
           ];
         }
       );
