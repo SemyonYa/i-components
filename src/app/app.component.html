@@ -1,6 +1,30 @@
 <div class="wrap">
   <h2>{{title}}</h2>
   <hr>
+  <p>Grid</p>
+  <ag-grid-angular *ngIf="columns"
+    style="width: 500px; height: 500px;"
+    class="ag-theme-alpine"
+    [rowData]="users"
+    [columnDefs]="columns"
+>
+</ag-grid-angular>
+  <hr>
+  <div>
+    <span>In progress</span>
+    <i-in-progress></i-in-progress>
+  </div>
+  <hr>
+  <p>Collapsible</p>
+  <i-collapsible [expanded]="searchValue.length > 0">
+    <div style="padding: 16px; border-radius: 16px; border: solid 1px #565656">
+      {{searchValue}}
+      <ul>
+        <li *ngFor="let item of [1,2,3,4,5]">Item #{{item}}</li>
+      </ul>
+    </div>
+  </i-collapsible>
+  <hr>
   <p>Search input: {{searchValue ? searchValue : '[empty]'}}</p>
   <i-search-input (onChange)="onSearchChange($event)"></i-search-input>
   <hr>
