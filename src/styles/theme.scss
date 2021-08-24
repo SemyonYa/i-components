@@ -1,0 +1,18 @@
+input {
+    border-radius: 8px;
+    padding: 6px 12px;
+    border: solid 1px var(--color-text);
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: var(--color-primary);
+}
+
+input.search {
+    padding-right: 36px;
+    background-image: url("/assets/icons/search.svg");
+    background-size: 16px 16px;
+    background-position: calc(100% - 6px) center;
+    background-repeat: no-repeat;
+}

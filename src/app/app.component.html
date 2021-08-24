@@ -1,0 +1,9 @@
+<div class="wrap">
+  <h2>{{title}}</h2>
+  <hr>
+  <p>Search input: {{searchValue ? searchValue : '[empty]'}}</p>
+  <i-search-input (onChange)="onSearchChange($event)"></i-search-input>
+  <hr>
+  <p>Toggle: {{toggleValue}}</p>
+  <i-toggle [initialValue]="false" (onToggle)="onToggle($event)"></i-toggle>
+</div>
