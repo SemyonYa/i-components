@@ -10,20 +10,16 @@ import { FakeApiService } from './services/fake-api.service';
 export class AppComponent implements OnInit {
   title = 'i-components';
   users: User[];
-  columns: any[];
+  breadcrumbs: { title: string, route: string }[] = [
+    { title: 'Users', route: '/' },
+    { title: 'User #56', route: '/' },
+  ];
 
   constructor(private fakeApiService: FakeApiService) {
     fakeApiService.users$
       .subscribe(
         users => {
           this.users = users;
-          this.columns = [
-            { field: 'ID', sortable: true },
-            { field: 'login', sortable: true },
-            { field: 'name', sortable: true },
-            { field: 'role', sortable: true },
-            { field: 'age', sortable: true },
-          ];
         }
       );
   }

@@ -6,4 +6,11 @@
         font-weight: 400;
         text-transform: uppercase;
     }
+
+    .in-progress {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        line-height: 1;
+    }
 }
